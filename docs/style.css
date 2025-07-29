@@ -7,14 +7,15 @@ body {
     margin: 0;
     background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
     color: #333;
+    transition: background 0.5s;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.92);
     padding: 30px 40px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     max-width: 400px;
     width: 100%;
 }
@@ -23,6 +24,7 @@ h1 {
     color: #e74c3c;
     margin-bottom: 20px;
     font-size: 44px;
+    letter-spacing: 2px;
 }
 
 .timer {
@@ -36,9 +38,105 @@ h1 {
     color: #e74c3c;
     font-size: 34px;
     margin: 0 5px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(1.2);
+    }
+
+    20% {
+        transform: scale(0.9);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
 }
 
 #message {
-    /* font-style: italic; */
     color: #666;
+    margin-bottom: 10px;
+}
+
+#score-board {
+    margin-top: 24px;
+    font-size: 18px;
+    background: #ffe6ea;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.07);
+}
+
+.settings-panel {
+    margin-top: 30px;
+    padding: 15px 10px;
+    background: #f9f1f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.07);
+}
+
+.settings-panel h2 {
+    margin: 0 0 10px 0;
+    color: #e74c3c;
+    font-size: 22px;
+}
+
+.settings-panel label {
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.settings-panel select {
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid #e74c3c;
+    background: #fff;
+    color: #e74c3c;
+    font-size: 16px;
+}
+
+.selection{
+    color:black
+}
+
+/* Theme: Pink */
+body.theme-pink {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+/* Theme: Blue */
+body.theme-blue {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+body.theme-blue .container,
+body.theme-blue .settings-panel {
+    background: rgba(240, 248, 255, 0.95);
+}
+
+body.theme-blue h1,
+body.theme-blue .heart,
+body.theme-blue .timer,
+body.theme-blue .settings-panel h2 {
+    color: #3498db;
+}
+
+
+body.theme-blue #score-board {
+    background: #eaf6ff;
+    color: #3498db;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.07);
 }

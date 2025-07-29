@@ -19,7 +19,7 @@ fix: change this repo to public, deploy it again.
         <h1>Loving Count<span class="heart">❤️</span></h1>
         <div id="message">
             自樱花纷飞那日起，时光的每粒沙都闪着爱意。<br>
-            <span style=" font-size: 0.9em; color: black;">
+            <span style="font-size: 0.9em; color: black;">
                 Since cherry blossoms danced that day,<br>
                 every grain of time glows with love.
             </span>
@@ -36,9 +36,43 @@ fix: change this repo to public, deploy it again.
         <div class="message" id="message">
             自2024年4月20日以来的每一秒都值得珍惜
         </div>
+
+        <!-- Score board will be dynamically inserted by JS -->
+        <div id="score-board" class="board"></div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel">
+            <h2>Settings</h2>
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <!-- <option value="default" class="selection">Default</option> -->
+                <option value="pink" class="selection">Pink</option>
+                <option value="blue" class="selection">Blue</option>
+            </select>
+        </div>
     </div>
 
     <script src="main.js"></script>
+    <script>
+        // Theme switcher logic
+        document.getElementById('theme-select').addEventListener('change', function (e) {
+            document.body.className = '';
+            switch (e.target.value) {
+                case 'pink':
+                    document.body.classList.add('theme-pink');
+                    break;
+                case 'blue':
+                    document.body.classList.add('theme-blue');
+                    break;
+                case 'dark':
+                    document.body.classList.add('theme-dark');
+                    break;
+                default:
+                    // Default theme
+                    break;
+            }
+        });
+    </script>
 </body>
 
 </html>
