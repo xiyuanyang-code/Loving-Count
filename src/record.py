@@ -44,7 +44,7 @@ class RecordBot:
         data (List[Dict]): Loaded user data.
     """
 
-    def __init__(self, data_path: str = "./data/data.json", egg: int = 0):
+    def __init__(self, data_path: str = "./docs/data.json", egg: int = 0):
         """
         Initialize RecordBot and load user data.
 
