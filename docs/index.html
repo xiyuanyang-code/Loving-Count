@@ -11,52 +11,7 @@ fix: change this repo to public, deploy it again.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loving Count</title>
-    <style>
-        body {
-            font-family: Georgia, 'Times New Roman', Times, serif, 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: #333;
-        }
-
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h1 {
-            color: #e74c3c;
-            margin-bottom: 20px;
-            font-size: 44px;
-        }
-
-        .timer {
-            font-size: 20px;
-            font-weight: bold;
-            color: #e74c3c;
-            margin: 20px 0;
-        }
-
-        .heart {
-            color: #e74c3c;
-            font-size: 34px;
-            margin: 0 5px;
-        }
-
-        #message {
-            /* font-style: italic; */
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -83,34 +38,7 @@ fix: change this repo to public, deploy it again.
         </div>
     </div>
 
-    <script>
-        const startDate = new Date('2024-04-20T00:00:00');
-
-        // Starting timing
-        window.onload = function () {
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        };
-
-        function updateTimer() {
-            const now = new Date();
-            const diffInSeconds = Math.floor((now - startDate) / 1000);
-
-            // fix: Simplified handling, ignoring leap years.
-            const days = Math.floor(diffInSeconds / (3600 * 24));
-            const hours = Math.floor((diffInSeconds % (3600 * 24)) / 3600);
-            const minutes = Math.floor((diffInSeconds % 3600) / 60);
-            const seconds = diffInSeconds % 60;
-
-            // formatting
-            document.getElementById('timer1').textContent = `${diffInSeconds} seconds`
-            document.getElementById('timer2').textContent = `${padZero(days)}天 ${padZero(hours)}小时 ${padZero(minutes)}分钟 ${padZero(seconds)}秒`;
-        }
-
-        function padZero(num) {
-            return num.toString().padStart(2, '0');
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
