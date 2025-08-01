@@ -6,7 +6,6 @@ import random
 sys.path.append(os.getcwd())
 
 from src.logging_config import setup_logging_config
-from src.secret import show_secret
 from typing import List, Dict, Optional, Any
 
 logger = setup_logging_config()
@@ -161,7 +160,8 @@ class RecordBot:
         """
         if self.egg == 520:
             logger.info("Egg triggered! Showing secret.")
-            show_secret()
+            # show_secret()
+            print("I love you.")
         else:
             logger.debug("Egg not triggered.")
 
